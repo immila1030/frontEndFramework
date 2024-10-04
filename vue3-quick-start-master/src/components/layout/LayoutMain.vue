@@ -6,7 +6,6 @@
             <LayoutContent class="layout-inner">
                 <router-view v-slot="{ Component, route }">
                     <keep-alive>
-                        <p></p>
                         <component :is="Component" v-if="route.meta && route.meta.keepAlive" :key="route.fullPath" />
                     </keep-alive>
                     <component :is="Component" v-if="!(route.meta && route.meta.keepAlive)" :key="route.fullPath" />
